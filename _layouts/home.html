@@ -6,10 +6,10 @@
 <body class="home-template" itemscope itemtype="http://schema.org/WebPage">
 <header class="summer-site-head">
     <div class="summer-site-head-menu">
-        <a class="summer-blog-logo" href="{{ site.url }}"><img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo" /></a>
-        
-        
-        <div class="summer-blog-menu">      
+        <a class="summer-blog-logo" href="{{ site.github.url }}"><img src="{{ site.github.url }}/images/{{ site.logo }}" alt="Blog Logo" /></a>
+
+
+        <div class="summer-blog-menu">
     <div class="summer-mobile-menu show-for-small">
         <a href="#"><i class="fa fa-bars"></i></a>
     </div>
@@ -21,10 +21,10 @@
             <li>{% if link.external %}
             <a href="{{ link.url }}">{{ link.title }}</a>
             {% else %}
-            <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+            <a href="{{ site.github.url }}{{ link.url }}">{{ link.title }}</a>
             {% endif %} </li>
-{% endfor %}            
-           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+{% endfor %}
+           <li><a href="{{ site.github.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
     </ul>
 </div>
         <div class="clearfix"></div>
@@ -47,6 +47,6 @@
 </main>
     {% include footer.html %}
 
-{% include scripts.html %}  
+{% include scripts.html %}
 </body>
 </html>

@@ -3,23 +3,23 @@
 <head>
 {% include head.html %}
 </head>
-<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
 
 <main id="summer-post-container" class="summer-post-container intro-effect-sliced" role="main">
-    
-    
+
+
         <header class="summer-post-header">
             <div class="bg-img"></div>
-            
+
             <div class="summer-post-menu-header">
-                
-                    <a class="summer-blog-logo" href="{{ site.url }}">
-                        <img src="{{ site.url }}/images/{{ site.logo }}" alt="Blog Logo" />
+
+                    <a class="summer-blog-logo" href="{{ site.github.url }}">
+                        <img src="{{ site.github.url }}/images/{{ site.logo }}" alt="Blog Logo" />
                     </a>
-                
-                
-                
-                <div class="summer-blog-menu">      
+
+
+
+                <div class="summer-blog-menu">
     <div class="summer-mobile-menu show-for-small">
         <a href="#"><i class="fa fa-bars"></i></a>
     </div>
@@ -31,22 +31,22 @@
             <li>{% if link.external %}
                     <a href="{{ link.url }}">{{ link.title }}</a>
                 {% else %}
-                    <a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+                    <a href="{{ site.github.url }}{{ link.url }}">{{ link.title }}</a>
                 {% endif %} </li>
-{% endfor %}            
-           <li><a href="{{ site.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+{% endfor %}
+           <li><a href="{{ site.github.url }}/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
     </ul>
 
 </div>
             </div>
             <div class="summer-post-title bg-check">
                 <h1>{{ page.title }}</h1>
-                <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
+                <p>by <strong>{{ site.owner.name }}</strong> &#8212; {% assign tagsize = page.tags.size %}{% if tagsize != 0 %}on {% for tag in page.tags %}<a href="{{ site.github.url }}/tags/index.html#{{ tag | cgi_encode }}" data-toggle="tooltip" title="Posts tagged with {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}&nbsp;&comma;&nbsp;{% endunless %}{% endfor %}{% endif %} <strong><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time></strong></p>
             </div>
             <div class="bg-img"></div>
         </header>
         <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
-        {% if page.imagefeature %}<img src="{{ site.url }}/images/{{ page.imagefeature }}" alt="cover-image" />{% endif %}
+        {% if page.imagefeature %}<img src="{{ site.github.url }}/images/{{ page.imagefeature }}" alt="cover-image" />{% endif %}
         <article class="summer-post-content post">
             <div>{{ content }}
             </div>
@@ -54,9 +54,9 @@
         <div class="cf"></div>
 {% if site.share %}{% include share.html %}{% endif %}
         <div class="cf"></div>
-        
-{% include signoff.html %} 
-        
+
+{% include signoff.html %}
+
         <div class="cf"></div>
         {% if site.disqus_shortname and page.comments == true %}
         <section class="summer-disqus row">
@@ -69,8 +69,8 @@
 {% endif %}
         <div class="cf"></div>
 
-    {% include footer.html %} 
-</main>    
-{% include scripts.html %} 
+    {% include footer.html %}
+</main>
+{% include scripts.html %}
 </body>
 </html>
