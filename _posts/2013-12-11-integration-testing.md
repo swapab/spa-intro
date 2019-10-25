@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Integration Testing
+sidebar: true
 description: "Integration Testing"
 headline: "Integration Testing"
 categories: programming
-tags: 
+tags:
   - tdd
 imagefeature: "website-speed.jpg"
 imagecredit: spreadeffect.com
@@ -113,19 +114,19 @@ The behaviour or scenario to be tested is written in "Gherkin syntax":https://gi
 bc.. Feature: User Log In
  Scenario: with valid data
    When I log in with "hello@example.com" and "password"
-   Then I should be logged in 
+   Then I should be logged in
 
 bq. *2. Write a step definition in Ruby*
 
 Step definitions are Cucumber's equivalent of method definitions or function declarations in a conventional programming language. In our example we have define them in Ruby and they are invoked when Cucumber parses steps in the plain-text features(i.e. step #1).
 
 bc.. # Cucumber step definition
- When /^I log in (?:with|as) "(.*)" and "(.*)"$/ do |email, password| 
-   visit new_user_session_path 
-   page.should have_css("input[type='email']") 
-   fill_in "Email", :with => email 
-   fill_in "Password", :with => password 
-   click_button "Log In" 
+ When /^I log in (?:with|as) "(.*)" and "(.*)"$/ do |email, password|
+   visit new_user_session_path
+   page.should have_css("input[type='email']")
+   fill_in "Email", :with => email
+   fill_in "Password", :with => password
+   click_button "Log In"
  end
 
 bq. *3. Run and watch it fail/pass*
@@ -140,7 +141,7 @@ The output should be something like:
 bc.. Feature: User Log In
  Scenario: with valid data
    When I log in with "hello@example.com" and "password"
-   Then I should be logged in 
+   Then I should be logged in
 
 1 scenario (1 passed)
 1 step (1 passed)
